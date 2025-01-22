@@ -1,0 +1,6 @@
+@smart_flow_connectors_HostAddress = http://localhost:5153
+
+GET {{smart_flow_connectors_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
