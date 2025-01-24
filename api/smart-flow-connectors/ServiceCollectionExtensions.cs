@@ -23,11 +23,6 @@ namespace SmartFlow.Connectors.API
                     var blobServiceClient = new BlobServiceClient(new Uri(blobStorageEndpoint), _defaultAzureCredential);
                     return blobServiceClient;
                 });
-                services.AddSingleton<BlobContainerClient>(sp =>
-                {
-                    var azureStorageContainer = configuration["ContentStorageContainer"];
-                    return sp.GetRequiredService<BlobServiceClient>().GetBlobContainerClient(azureStorageContainer);
-                });
             }
             services.AddTransient<ServiceNowKnowledgeExtractor>();
             return services;
